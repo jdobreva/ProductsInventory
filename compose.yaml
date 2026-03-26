@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: product-inventory-app
+    ports:
+      - "8080:8080"
+    environment:
+      PRODUCTS_DATASOURCE_URL: jdbc:postgresql://db:5432/inventory_db
+      PRODUCTS_DATASOURCE_USERNAME: productsAdmin
+      PRODUCTS_SPRING_DATASOURCE_PASSWORD: theProducts
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      logging.level.org.springframework: TRACE
+      logging.level.com.adesso.products: DEBUG
+      HMAC_SHA_KEY: SiMHX1BybK/vGF7P8rjbLLPizz8urnGov6TcXIt9+d4=
+    restart: unless-stopped

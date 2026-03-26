@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/productsinventory 
+    username: productsUser
+    password: products
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    defer-datasource-initialization: false
+  flyway:
+    baseline-on-migrate: true
+    baseline-version: 0
+    schemas:
+    - public
+  security:
+    user:
+      name: username
+      password: '{noop}pass'
+#     password: '{bcrypt}$2a$10$wA2VO2/LQE8UhVad3c/75e7/LLDJHXdZnoPCfRjXKCy0lzEWw8WcO'
+      roles:
+      - ADMIN

@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/productsinventory 
+    username: productsAdmin
+    password: theProducts
+    driver-class-name: org.postgresql.Driver
+	
