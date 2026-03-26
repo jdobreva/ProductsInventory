@@ -50,7 +50,7 @@ src/
             └── migrations                                # Flyway sql scripts for DB initialization
   └── test                                                # Unit and integration tests
       ├── java 
-            └── com.adesso.products/......................# Test classes
+            └── com.adesso.products/                      # Test classes
       └── resources                                       # API configurations of files
         ├── db                                            # DB scripts
             └── migrations                                # Flyway sql scripts for DB initialization
@@ -126,14 +126,6 @@ Authorization: Bearer <jwt-token>
 | PUT    | /api/v1/products/{id} | Update product     |
 | DELETE | /api/v1/products/{id} | Delete product     |
 
-### Availability
-
-
-| Method | Endpoint               | Description                  |
-| ------ | ---------------------- | ---------------------------- |
-| GET    | /api/availability      | Get all availability records |
-| PUT    | /api/availability/{id} | Update availability          |
-
 ---
 
 ## ⚙️ Running the Application
@@ -147,7 +139,7 @@ Authorization: Bearer <jwt-token>
 ### Steps
 
 ```bash
-git clone https://github.com/your-username/product-inventory-api.git
+git clone https://github.com/jdobreva/ProductsInventory.git
 cd product-inventory-api
 mvn clean install
 mvn spring-boot:run
@@ -176,9 +168,12 @@ jdbc:postgresql://localhost:5432/productsinventory
 Example `application.properties`:
 
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/productsinventory
-spring.jpa.hibernate.ddl-auto=update
-jwt.secret=your-secret-key
+ PRODUCTS_DATASOURCE_URL: jdbc:postgresql://db:5432/inventory_db
+ PRODUCTS_DATASOURCE_USERNAME: productsAdmin
+ PRODUCTS_SPRING_DATASOURCE_PASSWORD: theProducts
+ logging.level.org.springframework: TRACE
+ logging.level.com.adesso.products: DEBUG
+ HMAC_SHA_KEY
 ```
 
 ---
