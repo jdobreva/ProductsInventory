@@ -167,13 +167,13 @@ jdbc:postgresql://localhost:5432/productsinventory
 
 Example `application.properties`:
 
-```properties
+```Environment properties
  PRODUCTS_DATASOURCE_URL: jdbc:postgresql://db:5432/inventory_db
  PRODUCTS_DATASOURCE_USERNAME: productsAdmin
  PRODUCTS_SPRING_DATASOURCE_PASSWORD: theProducts
  logging.level.org.springframework: TRACE
  logging.level.com.adesso.products: DEBUG
- HMAC_SHA_KEY
+ HMAC_SHA_KEY: <use: openssl rand -base64 32> 
 ```
 
 ---
